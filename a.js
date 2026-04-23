@@ -43,8 +43,8 @@ function bqhilang() {
 function kethalo() {
   new TypeIt("#halo", {
     strings: [vketikhalo],
-    startDelay: 50,
-    speed: 40,
+    startDelay: 30,
+    speed: 24,
     waitUntilVisible: true,
     afterComplete: function () {
       halo.innerHTML = vketikhalo;
@@ -77,10 +77,10 @@ kalimat.innerHTML = "";
 function mulaiketik1() {
   new TypeIt("#kalimat", {
     strings: [vketik1],
-    startDelay: 400,
-    speed: 20,
+    startDelay: 235,
+    speed: 12,
     cursor: false,
-    deleteSpeed: 20,
+    deleteSpeed: 12,
     breakLines: false,
     waitUntilVisible: true,
     lifelike: true,
@@ -91,7 +91,6 @@ function mulaiketik1() {
 }
 
 let opsLclick = 0, opsLcheck = 0;
-const defopsL = opsL.innerHTML;
 
 document.getElementById("bq").onclick = function () {
   if (opsLclick === 1) {
@@ -101,21 +100,21 @@ document.getElementById("bq").onclick = function () {
     if (opsLcheck === 4) mulaiketik5();
     if (opsLcheck === 5) kethalo2();
     otomatis();
-    opsL.style.opacity = "0";
+    TombolOpsL.style = "position:relative;opacity:0;margin:0;display:flex;align-items:center;list-style:none;transform:scale(.1);transition:all .4s ease;";
     opsLclick = 0;
   }
 };
 
 function aktiopsL() {
-  opsL.innerHTML = defopsL;
-  opsL.style.opacity = ".8";
+  opsL.innerHTML = "🎀 Tap to continue the celebration!";
+  TombolOpsL.style = "position:relative;opacity:1;margin:0;display:flex;align-items:center;list-style:none;transform:scale(1);transition:all 1s ease;";
   opsLclick = 1;
   opsLcheck += 1;
 }
 
 function gantiopsL() {
   opsL.innerHTML = "[ Tap one of the birthday icons! ]";
-  opsL.style.opacity = ".8";
+  TombolOpsL.style = "position:relative;opacity:1;margin:0;display:flex;align-items:center;list-style:none;transform:scale(1);transition:all 1s ease;";
 }
 
 function otomatis() {
@@ -141,10 +140,10 @@ function aktipesan2() {
   kalimat.innerHTML = "";
   new TypeIt("#kalimat", {
     strings: [vketik2, vketik3],
-    startDelay: 800,
-    speed: 50,
+    startDelay: 470,
+    speed: 29,
     cursor: true,
-    deleteSpeed: 50,
+    deleteSpeed: 29,
     breakLines: false,
     waitUntilVisible: true,
     lifelike: true,
@@ -166,7 +165,7 @@ function aktipesan4() {
   new TypeIt("#pesan4", {
     strings: [vketik4],
     startDelay: 1,
-    speed: 52,
+    speed: 31,
     cursor: true,
     waitUntilVisible: true,
     lifelike: true,
@@ -188,7 +187,7 @@ function aktipesan5() {
   new TypeIt("#pesan5", {
     strings: [vketik5],
     startDelay: 1,
-    speed: 52,
+    speed: 31,
     cursor: true,
     waitUntilVisible: true,
     lifelike: true,
@@ -210,7 +209,7 @@ function aktipesan6() {
   new TypeIt("#pesan6", {
     strings: [vketik6],
     startDelay: 1,
-    speed: 52,
+    speed: 31,
     cursor: true,
     waitUntilVisible: true,
     lifelike: true,
