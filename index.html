@@ -17,28 +17,74 @@
   <meta property="og:image" content="https://iili.io/3YXll94.jpg" />
   <meta property="og:url" content="https://og-bday.netlify.app/" />
   <meta property="og:type" content="website" />
+
+  <style>
+    /* ── Standalone Tap-to-Continue button ── */
+    #TombolOpsL {
+      position: relative;
+      opacity: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0.1);
+      transition: all 0.8s ease;
+      z-index: 10;
+    }
+    #TombolOpsL.aktif {
+      opacity: 1;
+      transform: scale(1);
+    }
+    #opsLBtn {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 32px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(180,0,80,0.85), rgba(80,0,120,0.85));
+      border: 2px solid rgba(255,255,255,0.75);
+      border-radius: 50px;
+      box-shadow: 0 0 18px rgba(255,100,180,0.7), 0 4px 20px rgba(0,0,0,0.4);
+      white-space: nowrap;
+      font-family: inherit;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+      transition: transform 0.2s ease;
+      animation: pulse-glow 1.8s ease-in-out infinite;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #opsLBtn:active { transform: scale(0.95); }
+    @keyframes pulse-glow {
+      0%,100% { box-shadow: 0 0 18px rgba(255,100,180,0.7), 0 4px 20px rgba(0,0,0,0.4); }
+      50%      { box-shadow: 0 0 34px rgba(255,160,220,1),   0 4px 28px rgba(0,0,0,0.5); }
+    }
+  </style>
 </head>
-<body style="background: linear-gradient(to bottom, #ffe1e1, #ff217de0), url(./r.jpg); height: 100vh;">
-  <audio src="./y2mate (mp3cut.net).mp3" id="linkmp3" class="sembunyi"></audio>
+<body style="background: linear-gradient(to bottom, #ffe1e1, #ff217de0), url(https://iili.io/B4SGNtt.jpg); height: 100vh;">
+  <audio src="./y2mate.mp3" id="linkmp3" class="sembunyi"></audio>
   <div id="bodyblur">
     <img src="" id="wallpaper" />
   </div>
   <div id="Content">
     <div id="kadoIn">
-      <img src="./Valentine-Surprise.png" alt="Open Gift Button" />
+      <img src="https://iili.io/B4SxOru.png" alt="Open Gift Button" />
     </div>
     <p id="ket">
-      <span style="font-style: italic; color: rgb(0,0,0); margin-top: 3px !important;">Open the gift, cutie:3</span>
+      <span style="font-style:italic;color:rgb(0,0,0);margin-top:3px !important;">Open the gift, cutie:3</span>
     </p>
-    <div class="kumpulanstiker" style="margin-top: 95px;">
+    <div class="kumpulanstiker" style="margin-top:95px;">
       <img src="https://media.tenor.com/4Ijycn6xFzUAAAAj/mochi-blue-roses.gif" id="fotostiker" />
-      <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker1" />
+      <img src="https://feeldreams.github.io/bunga.gif"       id="fotostiker1" />
       <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2" />
       <img src="https://media.tenor.com/snFoLI-S9CQAAAAj/milk-and-mocha.gif" id="fotostiker3" />
-      <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker4" />
+      <img src="https://feeldreams.github.io/emawh.gif"       id="fotostiker4" />
       <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker5" />
     </div>
+
     <p id="halo" class="halo"></p>
+
     <div>
       <blockquote id="bq" data-text="💞">
         <p id="kalimat">Happy Birthday, gorgeous! Today is all about celebrating you.</p>
@@ -54,22 +100,28 @@
         <p id="pesan4" class="sty2">It's your birthday!</p>
         <p id="pesan5" class="sty2">Today, I wish you a year filled with laughter, love, and unforgettable moments.</p>
         <p id="pesan6" class="sty2">Remember, you deserve every happiness in the world. Celebrate big and enjoy every moment!</p>
+        <!-- opsL is now outside the card, in its own glowing button below -->
       </blockquote>
     </div>
-    <!-- Tap to Continue Button — same size as Next button, separate container -->
-    <div id="TombolOpsL" style="position:relative;opacity:0;margin:0;display:flex;align-items:center;list-style:none;transform:scale(.1);transition:all 1s ease;">
-      <a id="opsL" style="cursor:pointer;display:inline-flex;align-items:center;margin:12px 0;transition:all .2s ease;font-size:24px;padding:20px 36px;outline:0;border:1px solid #fff;border-radius:28px;line-height:15px;background:rgba(0,0,0,.5);color:#fff;font-weight:700;white-space:nowrap;overflow:hidden;box-shadow:rgba(255,255,255,0.3) 0px 7px 29px 0px;z-index:1;text-shadow:0px 2px 2px rgba(0,0,0,.8);">🎀 Tap to continue the celebration!</a>
+
+    <!-- ★ Standalone visible "Tap to continue" button -->
+    <div id="TombolOpsL">
+      <button id="opsLBtn">🎀 Tap to continue the celebration!</button>
     </div>
-    <!-- Next Button — 200% larger via inline style override -->
-    <div id="Tombol"><a id="By" style="font-size:24px;padding:20px 36px;border-radius:28px;">&#128140; Next</a></div>
+
+    <!-- Next Button -->
+    <div id="Tombol">
+      <a id="By" style="font-size:24px;padding:20px 36px;border-radius:28px;">&#128140; Next</a>
+    </div>
+
     <div id="pesanditolak">
       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif" />
       <p id="kataditolak">Oops! You can't skip this birthday magic.</p>
     </div>
   </div>
+
   <script>
-    const body = document.querySelector("body");
-    const audio = new Audio("" + linkmp3.src);
+    const audio = new Audio(linkmp3.src);
     let ftganti = 0, fungsi = 0, fungsiAwal = 0;
     const deffotostiker = fotostiker.src;
 
@@ -79,8 +131,8 @@
       if (fungsiAwal === 0) {
         audio.play();
         fungsiAwal = 1;
-        kadoIn.style = "transition:all .8s ease;transform:scale(10);opacity:0";
-        wallpaper.style = "transform: scale(1.5);";
+        kadoIn.style  = "transition:all .8s ease;transform:scale(10);opacity:0";
+        wallpaper.style = "transform:scale(1.5)";
         ket.style = "display:none";
         setTimeout(initengahan, 300);
         setTimeout(inipesan, 500);
@@ -88,18 +140,18 @@
     };
 
     async function inipesan() {
+      // ✅ Raised limit to 20 — "Priyanka 💖" (12 chars) now works
       const name = "Priyanka 💖";
-      if (name && name.length < 40) {
+      if (name && name.length <= 20) {
         window.name = name;
         vketikhalo = "Happy Birthday, " + name + "!";
         mulainama();
       } else {
         await Swal.fire({
-          title: "Your name is lovely, but it seems a bit long.",
-          text: "Please enter a shorter name.",
+          title: "Name seems a bit long.",
+          text: "Please shorten the name in the code.",
           icon: "warning",
         });
-        inipesan();
       }
     }
   </script>
