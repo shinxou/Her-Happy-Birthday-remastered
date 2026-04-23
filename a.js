@@ -23,8 +23,8 @@ async function mulainama() {
   bodyblur.style   = "opacity:0";
   wallpaper.style  = "transform:scale(1)";
   fotostiker.style = "display:inline-flex";
-  setTimeout(ftmuncul, 70);
-  setTimeout(kethalo, 100);   // start greeting almost immediately
+  setTimeout(ftmuncul, 100);
+  setTimeout(kethalo, 200);   // start greeting almost immediately
 }
 
 function ftmuncul() {
@@ -52,7 +52,7 @@ function kethalo() {
     waitUntilVisible: true,
     afterComplete() {
       halo.innerHTML = vketikhalo;
-      setTimeout(bqmuncul, 70);
+      setTimeout(bqmuncul, 100);
     },
   }).go();
 }
@@ -147,7 +147,7 @@ function aktipesan2() {
     lifelike: false,
     afterComplete() {
       kalimat.innerHTML = vketik3;
-      setTimeout(aktipesan4, 100);
+      setTimeout(aktipesan4, 200);
     },
   }).go();
 }
@@ -161,7 +161,7 @@ pesan4.innerHTML = "";
 
 function aktipesan4() {
   wallpaper.style = "transform:scale(1)";
-  fthilang(); ftganti = 2; setTimeout(ftmuncul, 100);
+  fthilang(); ftganti = 2; setTimeout(ftmuncul, 200);
 
   pesan4.style.opacity   = "0";
   pesan4.style.transform = "translateY(6px)";
@@ -174,7 +174,7 @@ function aktipesan4() {
     pesan4.style.transform = "translateY(0)";
   }));
 
-  setTimeout(aktipesan5, 200);
+  setTimeout(aktipesan5, 400);
 }
 
 const vketik5 = pesan5.innerHTML;
@@ -182,7 +182,7 @@ pesan5.innerHTML = "";
 
 function aktipesan5() {
   wallpaper.style = "transform:scale(1.5)";
-  fthilang(); ftganti = 3; setTimeout(ftmuncul, 100);
+  fthilang(); ftganti = 3; setTimeout(ftmuncul, 200);
 
   pesan5.style.opacity    = "0";
   pesan5.style.transform  = "translateY(6px)";
@@ -194,7 +194,7 @@ function aktipesan5() {
     pesan5.style.transform = "translateY(0)";
   }));
 
-  setTimeout(aktipesan6, 200);
+  setTimeout(aktipesan6, 400);
 }
 
 const vketik6 = pesan6.innerHTML;
@@ -202,7 +202,7 @@ pesan6.innerHTML = "";
 
 function aktipesan6() {
   wallpaper.style = "transform:scale(1)";
-  fthilang(); ftganti = 4; setTimeout(ftmuncul, 100);
+  fthilang(); ftganti = 4; setTimeout(ftmuncul, 200);
 
   pesan6.style.opacity    = "0";
   pesan6.style.transform  = "translateY(6px)";
@@ -214,7 +214,7 @@ function aktipesan6() {
     pesan6.style.transform = "translateY(0)";
   }));
 
-  setTimeout(tombol, 200);  // Next button appears ~400ms after last line
+  setTimeout(tombol, 400);  // Next button appears ~400ms after last line
 }
 
 // ── Birthday icon taps ────────────────────────────────────────────
@@ -233,6 +233,6 @@ function checkslov() {
     kolombaru.style = "position:relative;transform:scale(1)";
     fthilang(); ftganti = 1; setTimeout(ftmuncul, 200);
     otomatis();
-    setTimeout(aktipesan2, 200);
+    setTimeout(aktipesan2, 300);
   }
 }
